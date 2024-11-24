@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <ul className="lg:hidden bg-white shadow-md space-y-4 py-4 text-gray-600 text-center">
+        <ul className="lg:hidden bg-white shadow-md space-y-4 py-4 text-gray-600 text-center z-[999] relative">
           {['Home', 'Shop', 'Deals', "What's New"].map((link, index) => (
             <li
               key={index}
