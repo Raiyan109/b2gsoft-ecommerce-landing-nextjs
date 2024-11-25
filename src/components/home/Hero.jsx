@@ -1,5 +1,3 @@
-import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 import arrow from '@/assets/arrow.svg'
 import Image from "next/image";

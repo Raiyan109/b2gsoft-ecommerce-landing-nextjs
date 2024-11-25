@@ -8,7 +8,7 @@ import plazu from '@/assets/featured-plazu.png'
 import jacket from '@/assets/featured-jacket.png'
 import Image from 'next/image';
 import { Navigation } from 'swiper/modules';
-import { useRef } from 'react';
+
 import SwiperNavBtns from './SwiperNavBtns';
 
 const FeaturedProducts = () => {
@@ -20,8 +20,6 @@ const FeaturedProducts = () => {
         { id: 5, title: "Jacket", price: "2400", image: jacket },
     ];
 
-    const navigationNextRef = useRef(null);
-    const navigationPrevRef = useRef(null);
 
     return (
         <div className="container mx-auto px-4 py-8 ">
@@ -39,26 +37,31 @@ const FeaturedProducts = () => {
             {/* Swiper Slider */}
             <Swiper
                 // autoHeight={true}
-                slidesPerView={4}
+                slidesPerView={1}
                 spaceBetween={16}
-                // navigation={{
-                //     nextEl: ".swiper-button-next",
-                //     prevEl: ".swiper-button-prev",
-                // }}
-                navigation={{
-                    prevEl: navigationPrevRef.current,
-                    nextEl: navigationNextRef.current,
-                }}
-                onBeforeInit={(swiper) => {
-                    swiper.navigation.nextEl = navigationNextRef.current;
-                    swiper.navigation.prevEl = navigationPrevRef.current;
-                }}
+
                 modules={[Navigation]}
                 className="w-full mySwiper"
+                // breakpoints={{
+                //     640: { slidesPerView: 1 },
+                //     768: { slidesPerView: 2 },
+                //     1024: { slidesPerView: 4 },
+                // }}
                 breakpoints={{
-                    640: { slidesPerView: 1 },
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 4 },
+                    480: {
+                        width: 480,
+                        slidesPerView: 1,
+                    },
+                    // when window width is >= 640px
+                    640: {
+                        width: 640,
+                        slidesPerView: 1,
+                    },
+                    // when window width is >= 768px
+                    768: {
+                        width: 768,
+                        slidesPerView: 2,
+                    },
                 }}
             >
                 <div className='absolute top-5 z-20 left-10'>
@@ -78,13 +81,13 @@ const FeaturedProducts = () => {
                                     alt={product.title}
                                     width={300}
                                     height={300}
-                                    className="w-full h-[400px] object-contain mb-4"
+                                    className="w-full h-full lg:h-[400px] object-contain mb-4"
                                 />
                             </div>
                             {/* Product Title and Price */}
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="font-medium text-lg">{product.title}</h3>
-                                <p className="font-semibold text-xl text-gray-700">BDT {product.price}</p>
+                                <h3 className="font-medium text-sm lg:text-lg">{product.title}</h3>
+                                <p className="font-semibold text-sm lg:text-xl">BDT {product.price}</p>
                             </div>
                             {/* Add to Cart Button */}
                             <button className="mt-auto rounded-lg border border-[#7E53D4] text-[#7E53D4] font-medium py-2 w-full">
