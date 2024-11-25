@@ -17,27 +17,37 @@
 
 body {
   color: var(--foreground);
-  background: #F4F8FF  ;
+  background: #F4F8FF;
   font-family: "Manrope", sans-serif;
 }
 
-.mySwiper{
+.mySwiper {
   padding-top: 100px;
 }
 
-.swiper-slide{
+.swiper-slide {}
 
-}
+.swiper-wrapper {}
 
-.swiper-wrapper{
-
-}
-
-.swiper{
+.swiper {
   /* height: 30%; */
   /* background-color: rebeccapurple; */
   /* position: absolute; */
   /* top: 10px; */
   /* margin-top: 100px; */
   padding: 120px !important;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: #7E53D4;
+  width: 13px;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background-color: #7E53D4;
+  width: 20px;
+  height: 5px;
+  border-radius: 2px;
 }
