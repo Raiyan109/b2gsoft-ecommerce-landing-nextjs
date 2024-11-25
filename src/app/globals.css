@@ -25,6 +25,19 @@ body {
   padding-top: 100px;
 }
 
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 50%;
+}
+
+.swiper-slide {
+  text-align: center;
+  width: auto;
+}
+
 .swiper-slide {}
 
 .swiper-wrapper {}
@@ -50,4 +63,8 @@ body {
   width: 20px;
   height: 5px;
   border-radius: 2px;
+}
+
+.swiper-grid-column>.swiper-wrapper {
+  flex-direction: row !important;
 }

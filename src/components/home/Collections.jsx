@@ -28,65 +28,68 @@ const Collections = () => {
     return (
         <div>
             <div className="container mx-auto px-4 py-8">
-                <Swiper
-                    modules={[Pagination]}
-                    pagination={{
-                        el: ".custom-pagination",
-                        clickable: true,
-                    }}
-                    spaceBetween={16}
-                    slidesPerView={1}
-                    className="lg:flex hidden"
-                >
-                    {slides.map((slide) => (
-                        <SwiperSlide key={slide.id} className="">
-                            {/* Left Side: Image */}
-                            <div className="flex flex-col lg:flex-row gap-5 h-full lg:h-96">
-                                <div className="w-1/2 bg-[#EEECFB] relative flex items-center justify-center">
-                                    <Image
-                                        src={slide.image}
-                                        alt={slide.heading}
-                                        width={400}
-                                        height={400}
-                                        className="lg:absolute top-[-15%] object-cover max-h-[90%] lg:max-h-[115%] w-auto"
-                                    />
-                                </div>
+                <div className="hidden lg:block">
+                    <Swiper
+                        modules={[Pagination]}
+                        pagination={{
+                            el: ".custom-pagination",
+                            clickable: true,
+                        }}
+                        spaceBetween={120}
+                        slidesPerView={'auto'}
+                        className="lg:flex hidden"
+                    >
+                        {slides.map((slide) => (
+                            <SwiperSlide key={slide.id} className="w-fit">
+                                {/* Left Side: Image */}
+                                <div className="flex flex-col lg:flex-row gap-5 h-full lg:h-96">
+                                    <div className="w-1/2 bg-[#EEECFB] relative flex items-center justify-center">
+                                        <Image
+                                            src={slide.image}
+                                            alt={slide.heading}
+                                            width={400}
+                                            height={400}
+                                            className="lg:absolute top-[-15%] object-cover max-h-[90%] lg:max-h-[115%] w-auto"
+                                        />
+                                    </div>
 
-                                {/* Right Side: Text */}
-                                <div className="w-1/2 flex flex-col justify-center items-start text-center space-y-4 p-4">
-                                    <h2 className="text-xl lg:text-6xl font-bold">{slide.heading}</h2>
-                                    <div className="mt-6 flex justify-center items-center">
-                                        {/* Shop Now Button */}
-                                        <button
-                                            className="flex items-center justify-center bg-[#8F71E1] text-white textsm lg:text-lg font-medium rounded-[28px] w-[100px] lg:w-[149px] h-[32px] lg:h-[48px] gap-2 px-4"
-                                            style={{ padding: "8px", gap: "8px" }}
-                                        >
-                                            Shop now
-                                        </button>
-                                        {/* Arrow Button */}
-                                        <button className="flex items-center justify-center bg-[#8F71E1] text-white text-lg font-medium rounded-[28px] w-[30px] lg:w-[50px] h-[30px] lg:h-[50px] gap-2 px-4">
-                                            <Image
-                                                width={5}
-                                                height={5}
-                                                alt='arrow'
-                                                src={arrow}
-                                            />
-                                        </button>
+                                    {/* Right Side: Text */}
+                                    <div className="w-1/2 flex flex-col justify-center items-start text-center space-y-4 p-4">
+                                        <h2 className="text-xl lg:text-6xl font-bold">{slide.heading}</h2>
+                                        <div className="mt-6 flex justify-center items-center">
+                                            {/* Shop Now Button */}
+                                            <button
+                                                className="flex items-center justify-center bg-[#8F71E1] text-white textsm lg:text-lg font-medium rounded-[28px] w-[100px] lg:w-[149px] h-[32px] lg:h-[48px] gap-2 px-4"
+                                                style={{ padding: "8px", gap: "8px" }}
+                                            >
+                                                Shop now
+                                            </button>
+                                            {/* Arrow Button */}
+                                            <button className="flex items-center justify-center bg-[#8F71E1] text-white text-lg font-medium rounded-[28px] w-[30px] lg:w-[50px] h-[30px] lg:h-[50px] gap-2 px-4">
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    alt='arrow'
+                                                    src={arrow}
+                                                    className="w-20 h-20 object-contain"
+                                                />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
 
-                {/* Custom Pagination */}
-                <div className="custom-pagination flex justify-center mt-6 space-x-2 lg:flex hidden">
-                    {slides.map((_, index) => (
-                        <div
-                            key={index}
-                            className="swiper-pagination-bullet w-[32px] h-[8px] rounded-[8px] bg-[#7E53D4]"
-                        ></div>
-                    ))}
+                    {/* Custom Pagination */}
+                    <div className="custom-pagination flex justify-center mt-6 space-x-2 lg:flex hidden">
+                        {slides.map((_, index) => (
+                            <div
+                                key={index}
+                                className="swiper-pagination-bullet w-[32px] h-[8px] rounded-[8px] bg-[#7E53D4]"
+                            ></div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Mobile View */}
@@ -98,9 +101,11 @@ const Collections = () => {
                         >
                             {/* Image */}
                             <div className="w-full bg-[#EEECFB] flex justify-center">
-                                <img
+                                <Image
                                     src={slide.image}
                                     alt={slide.heading}
+                                    width={300}
+                                    height={300}
                                     className="relative top-[-10%] object-cover max-h-[90%] w-auto"
                                 />
                             </div>
@@ -108,12 +113,23 @@ const Collections = () => {
                             {/* Text */}
                             <div className="space-y-2 px-4">
                                 <h2 className="text-2xl font-bold">{slide.heading}</h2>
-                                <div className="flex space-x-4">
-                                    <button className="w-[149px] h-[48px] rounded-[28px] bg-[#8F71E1] text-white font-medium">
-                                        Shop Now
+                                <div className="mt-6 flex justify-center items-center">
+                                    {/* Shop Now Button */}
+                                    <button
+                                        className="flex items-center justify-center bg-[#8F71E1] text-white textsm lg:text-lg font-medium rounded-[28px] w-[100px] lg:w-[149px] h-[32px] lg:h-[48px] gap-2 px-4"
+                                        style={{ padding: "8px", gap: "8px" }}
+                                    >
+                                        Shop now
                                     </button>
-                                    <button className="w-[149px] h-[48px] rounded-[28px] border border-[#8F71E1] text-[#8F71E1] font-medium">
-                                        Learn More
+                                    {/* Arrow Button */}
+                                    <button className="flex items-center justify-center bg-[#8F71E1] text-white text-lg font-medium rounded-[28px] w-[30px] lg:w-[50px] h-[30px] lg:h-[50px] gap-2 px-4">
+                                        <Image
+                                            width={20}
+                                            height={20}
+                                            alt='arrow'
+                                            src={arrow}
+                                            className="w-20 h-20 object-contain"
+                                        />
                                     </button>
                                 </div>
                             </div>
