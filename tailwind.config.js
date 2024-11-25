@@ -15,6 +15,9 @@ module.exports = {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      'pacifico': ["Pacifico"]
+    }
   },
   plugins: [],
 };

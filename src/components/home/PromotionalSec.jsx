@@ -5,12 +5,16 @@ import Image from 'next/image'
 const PromotionalSec = () => {
     return (
         <div className='pb-20'>
-            <div className="h-[450px] bg-[#EEECFB] flex">
-                {/* Left Side */}
-                <div className="flex-2 flex flex-col justify-center items-start px-8 lg:px-24">
-                    <h2 className="text-6xl font-bold leading-tight">
-                        <span className="text-[#6F42C1]">30%</span> Off for New Customers
-                    </h2>
+            <section className="h-full lg:h-[550px] bg-[#EEECFB] flex flex-col lg:flex-row items-center justify-between px-6 lg:px-12 py-8 relative">
+                {/* Left Section */}
+                <div className="lg:w-3/5 w-full flex flex-col justify-center lg:items-start items-center text-center lg:text-left space-y-4">
+                    {/* Subheading */}
+                    <p className="text-sm lg:text-2xl text-[#6F42C1] font-medium font-pacifico">Big Deal</p>
+                    {/* Heading */}
+                    <h1 className="text-4xl lg:text-6xl font-bold max-w-sm lg:max-w-max">
+                        <span className="text-[#6F42C1]">30% Off</span> for New Customers
+                    </h1>
+                    {/* Buttons */}
                     <div className="mt-6 flex justify-center items-center">
                         {/* Shop Now Button */}
                         <button
@@ -31,16 +35,15 @@ const PromotionalSec = () => {
                     </div>
                 </div>
 
-                {/* Right Side */}
-                <div className="flex-1 relative">
+                {/* Right Section */}
+                <div className="lg:w-2/5 w-full flex justify-center lg:justify-end mt-8 lg:mt-0">
                     <Image
-                        src={promotionalBg}
-                        alt="Promotional"
-                        className="absolute bottom-0 right-0 lg:w-full lg:h-auto"
-                        style={{ maxHeight: "400px", objectFit: "contain" }}
+                        src={promotionalBg} // Replace with your image path
+                        alt="Featured Product"
+                        className=" lg:absolute lg:bottom-0 lg:right-0 object-contain"
                     />
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
