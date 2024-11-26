@@ -6,6 +6,7 @@ import { Pagination } from "swiper/modules";
 import collectionMen from '@/assets/collection-men.png'
 import Image from "next/image";
 import arrow from '@/assets/arrow.svg'
+import Link from "next/link";
 
 const Collections = () => {
     const slides = [
@@ -101,13 +102,15 @@ const Collections = () => {
                         >
                             {/* Image */}
                             <div className="w-full bg-[#EEECFB] flex justify-center">
-                                <Image
-                                    src={slide.image}
-                                    alt={slide.heading}
-                                    width={300}
-                                    height={300}
-                                    className="relative top-[-10%] object-cover max-h-[90%] w-auto"
-                                />
+                                <Link href={`/${slide.id}`}>
+                                    <Image
+                                        src={slide.image}
+                                        alt={slide.heading}
+                                        width={300}
+                                        height={300}
+                                        className="relative top-[-10%] object-cover max-h-[90%] w-auto"
+                                    />
+                                </Link>
                             </div>
 
                             {/* Text */}

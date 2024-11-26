@@ -10,6 +10,7 @@ import summerSaree2 from '@/assets/summer-saree-2.png'
 import summerShirt1 from '@/assets/summer-shirt-1.png'
 import summerShirt2 from '@/assets/summer-shirt-2.png'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const SummerProducts = () => {
     const products = [
@@ -134,13 +135,15 @@ const SummerProducts = () => {
                             <div className="border rounded-lg shadow-md p-2 flex flex-col h-full bg-white space-y-6">
                                 {/* Product Image */}
                                 <div className='bg-[#F5F6FD] rounded-lg'>
-                                    <Image
-                                        src={product.image}
-                                        alt={product.title}
-                                        width={300}
-                                        height={300}
-                                        className="w-full h-full lg:h-[400px] object-contain mb-4"
-                                    />
+                                    <Link href={`/${product.id}`}>
+                                        <Image
+                                            src={product.image}
+                                            alt={product.title}
+                                            width={300}
+                                            height={300}
+                                            className="w-full h-full lg:h-[400px] object-contain mb-4"
+                                        />
+                                    </Link>
                                 </div>
                                 {/* Product Title and Price */}
                                 <div className="flex justify-between items-center mb-4">

@@ -9,11 +9,7 @@ const CommonLayout = ({ children }) => {
         <div>
             <Navbar />
             <div>
-                <Hero />
-                <Features />
-                <div className="max-w-[1800px] mx-auto">
-                    {children}
-                </div>
+                {children}
             </div>
             <Footer />
         </div>
