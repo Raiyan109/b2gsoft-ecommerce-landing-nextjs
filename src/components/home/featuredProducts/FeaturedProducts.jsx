@@ -8,18 +8,11 @@ import plazu from '@/assets/featured-plazu.png'
 import jacket from '@/assets/featured-jacket.png'
 import Image from 'next/image';
 import { Navigation } from 'swiper/modules';
-
+import { products } from '@/data/products';
 import SwiperNavBtns from './SwiperNavBtns';
 import Link from 'next/link';
 
 const FeaturedProducts = () => {
-    const products = [
-        { id: 1, title: "Indian Saree", price: "2300", image: saree },
-        { id: 2, title: "Hoodie", price: "2300", image: hoodie },
-        { id: 3, title: "Plazu", price: "2300", image: plazu },
-        { id: 4, title: "Jacket", price: "2300", image: jacket },
-        { id: 5, title: "Jacket", price: "2400", image: jacket },
-    ];
 
 
     return (

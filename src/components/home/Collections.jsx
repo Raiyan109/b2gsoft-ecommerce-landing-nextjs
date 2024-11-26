@@ -7,8 +7,10 @@ import collectionMen from '@/assets/collection-men.png'
 import Image from "next/image";
 import arrow from '@/assets/arrow.svg'
 import Link from "next/link";
+import { products } from '../../data/products'
 
 const Collections = () => {
+
     const slides = [
         {
             id: 1,
@@ -95,7 +97,7 @@ const Collections = () => {
 
                 {/* Mobile View */}
                 <div className="lg:hidden flex flex-col space-y-6">
-                    {slides.map((slide) => (
+                    {products.map((slide) => (
                         <div
                             key={slide.id}
                             className="flex flex-col items-start text-left space-y-4"
@@ -105,7 +107,7 @@ const Collections = () => {
                                 <Link href={`/${slide.id}`}>
                                     <Image
                                         src={slide.image}
-                                        alt={slide.heading}
+                                        alt={slide.title}
                                         width={300}
                                         height={300}
                                         className="relative top-[-10%] object-cover max-h-[90%] w-auto"
@@ -115,7 +117,7 @@ const Collections = () => {
 
                             {/* Text */}
                             <div className="space-y-2 px-4">
-                                <h2 className="text-2xl font-bold">{slide.heading}</h2>
+                                <h2 className="text-2xl font-bold">{slide.title}</h2>
                                 <div className="mt-6 flex justify-center items-center">
                                     {/* Shop Now Button */}
                                     <button
