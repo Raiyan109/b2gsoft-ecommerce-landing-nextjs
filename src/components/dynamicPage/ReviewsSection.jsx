@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
 import avatar from '@/assets/avatar.png'
+import star from '@/assets/star.png'
+import starGray from '@/assets/gray-star.png'
 import Image from "next/image";
 import { MdOutlineThumbUp } from "react-icons/md";
 
@@ -69,11 +71,42 @@ const ReviewsSection = () => {
                             {reviews.slice(0, 1).map((review, index) => (
                                 <div key={index} className="space-y-2 border-b border-gray-200 pb-4">
                                     <div className="flex items-start gap-4">
+                                        <Image
+                                            src={star}
+                                            alt='star'
+                                            width={30}
+                                            height={30}
+                                            className=""
+                                        />
+                                        <Image
+                                            src={star}
+                                            alt='star'
+                                            width={30}
+                                            height={30}
+                                            className=""
+                                        />
+                                        <Image
+                                            src={star}
+                                            alt='star'
+                                            width={30}
+                                            height={30}
+                                            className=""
+                                        />
+                                        <Image
+                                            src={star}
+                                            alt='star'
+                                            width={30}
+                                            height={30}
+                                            className=""
+                                        />
+                                        <Image
+                                            src={starGray}
+                                            alt='star'
+                                            width={30}
+                                            height={30}
+                                            className=""
+                                        />
 
-                                        <div className="text-yellow-500 text-2xl">
-                                            {"★".repeat(review.rating)}{" "}
-                                            {"☆".repeat(5 - review.rating)}
-                                        </div>
                                     </div>
 
                                 </div>
@@ -124,13 +157,46 @@ const ReviewsSection = () => {
                                     />
                                     {/* Content */}
                                     <div className="flex-1">
-                                        <div className="flex gap-5 items-center">
+                                        <div className="flex gap-5 items-center mb-1">
                                             <span className="font-semibold">{review.name}</span>
                                             <span className="text-gray-500 text-sm">{review.daysAgo} days ago</span>
                                         </div>
-                                        <div className="text-yellow-500 text-2xl">
-                                            {"★".repeat(review.rating)}{" "}
-                                            {"☆".repeat(5 - review.rating)}
+                                        <div className="flex items-start gap-2">
+                                            <Image
+                                                src={star}
+                                                alt='star'
+                                                width={20}
+                                                height={20}
+                                                className=""
+                                            />
+                                            <Image
+                                                src={star}
+                                                alt='star'
+                                                width={20}
+                                                height={20}
+                                                className=""
+                                            />
+                                            <Image
+                                                src={star}
+                                                alt='star'
+                                                width={20}
+                                                height={20}
+                                                className=""
+                                            />
+                                            <Image
+                                                src={star}
+                                                alt='star'
+                                                width={20}
+                                                height={20}
+                                                className=""
+                                            />
+                                            <Image
+                                                src={starGray}
+                                                alt='star'
+                                                width={20}
+                                                height={20}
+                                                className=""
+                                            />
                                         </div>
                                     </div>
                                 </div>

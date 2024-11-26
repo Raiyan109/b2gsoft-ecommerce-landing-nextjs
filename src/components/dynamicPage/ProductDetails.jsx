@@ -10,6 +10,7 @@ import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import bagImg from '@/assets/bag.png'
 import ReviewsSection from "./ReviewsSection";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductDetails = ({ product }) => {
     if (!product) return null;
@@ -140,7 +141,7 @@ const ProductDetails = ({ product }) => {
                     <p className="text-2xl font-bold mb-4">BDT {product.price}</p>
                     <hr className="border-[#CECECE] mb-4" />
 
-                    <div className="flex flex-col lg:flex-row gap-48">
+                    <div className="flex flex-col lg:flex-row gap-3 lg:gap-48">
                         {/* Available Size */}
                         <div className="flex flex-col space-y-2 mb-4">
                             <h3 className="font-bold">Available Size</h3>
@@ -155,8 +156,6 @@ const ProductDetails = ({ product }) => {
                                 ))}
                             </div>
                         </div>
-
-
                         {/* Available Color */}
                         <div className="flex flex-col space-y-2 mb-4">
                             <h3 className="font-bold">Available Color</h3>
@@ -177,6 +176,7 @@ const ProductDetails = ({ product }) => {
                             </div>
                         </div>
                     </div>
+
                     <hr className="border-[#CECECE] mb-4" />
 
                     {/* Quantity */}
@@ -202,7 +202,7 @@ const ProductDetails = ({ product }) => {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex space-x-4">
+                    <div className="flex space-y-4 lg:space-x-4 flex-col lg:flex-row">
                         <button className="bg-[#7E53D4] text-white px-6 py-2 rounded-md w-full">
                             Buy Now
                         </button>
@@ -214,6 +214,7 @@ const ProductDetails = ({ product }) => {
 
             </div>
             <ReviewsSection />
+            <RelatedProducts />
         </div>
     );
 };
